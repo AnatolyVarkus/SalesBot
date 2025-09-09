@@ -15,7 +15,7 @@ class OpenAIClient:
         messages = [{"role": "system", "content": prompt}]
 
         for msg in reversed(history):
-            print(msg.stringify())
+            # print(msg.stringify())
             if is_image(msg):
                 data_url = await download_image_as_data_url(msg)
                 role = 'assistant' if msg.out else 'user'

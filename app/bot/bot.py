@@ -59,7 +59,7 @@ class BotHandler:
         first_name = (sender.first_name or "").strip()
         last_name = (sender.last_name or "").strip()
         sender_name = (first_name + " " + last_name).strip()
-        print(f"{sender_name = }")
+        # print(f"{sender_name = }")
 
         if chat_id not in self.chat_states:
             self.chat_states[chat_id] = ChatState()
@@ -71,7 +71,7 @@ class BotHandler:
             if not bot_can_answer():
                 await asyncio.sleep(float(seconds_until_can_answer()+random.uniform(settings.ENTER_MIN, settings.ENTER_MAX*10)))
             wait = random.uniform(settings.ENTER_MIN, settings.ENTER_MAX)
-            print(f"Waiting {wait} seconds")
+            # print(f"Waiting {wait} seconds")
             await asyncio.sleep(wait)
             state.in_chat = True
             state.first_msg_time = now
@@ -108,7 +108,7 @@ class BotHandler:
             if not messages:
                 continue
             last_msg = messages[0]
-            print(f"{last_msg.message = }")
+            # print(f"{last_msg.message = }")
             if last_msg.out or last_msg.message is None:
                 continue
             await self.client.send_read_acknowledge(chat_id)
