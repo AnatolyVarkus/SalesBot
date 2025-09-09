@@ -33,7 +33,7 @@ class BotHandler:
 
     async def send_reply(self, chat_id, sender_name):
         print(f"Starting to send reply to {chat_id}")
-        history = await self.client.get_messages(chat_id, limit=20)
+        history = await self.client.get_messages(chat_id, limit=100)
         reply = await open_ai_client.generate_response(history, sender_name, self.client)
         messages = json.loads(reply)["messages"]
         for message in messages:
