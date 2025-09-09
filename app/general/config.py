@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from dotenv import load_dotenv
 import os
+load_dotenv("/etc/projects_env/SalesBot/.env")
 
 @dataclass
 class Credentials:
