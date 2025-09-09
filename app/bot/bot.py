@@ -13,7 +13,8 @@ from .time_handler import bot_can_answer, seconds_until_can_answer
 
 class BotHandler:
     def __init__(self):
-        self.client = TelegramClient(credentials.SESSION_NAME, credentials.API_ID, credentials.API_HASH)
+        self.client = TelegramClient(credentials.SESSION_NAME, credentials.API_ID, credentials.API_HASH,
+                                     system_version="4.16.30-vxCUSTOM", device_model="iphone")
         self.chat_states = {}
         self.client.add_event_handler(self.on_new_message,
                                       events.NewMessage(incoming=True))
