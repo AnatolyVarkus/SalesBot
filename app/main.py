@@ -6,7 +6,7 @@ async def main():
     asyncio.create_task(bot_handler.monitor_exits())
     await bot_handler.process_unanswered_messages()
     print("Bot started...")
-    await bot_handler.run_until_disconnected()
+    await bot_handler.client.run_until_disconnected()
 
 if __name__ == "__main__":
     asyncio.run(main())

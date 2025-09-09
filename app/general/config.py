@@ -17,10 +17,12 @@ class Credentials:
 class Settings:
     # Настройки чата
     CHAT_STATES = {}
-    DEBOUNCE_SECONDS = 3  # ждать после окончания печати
-    MIN_IN_CHAT_TIME = 30  # оставаться в чате после последнего сообщения
+    DEBOUNCE_SECONDS = 0  # ждать после окончания печати
+    MIN_IN_CHAT_TIME = 60  # оставаться в чате после последнего сообщения
     ENTER_MIN = 10  # мин время до входа в чат, если не в чате
     ENTER_MAX = 30
+
+    PROHIBITED_IDS = [777000]
 
 credentials = Credentials()
 settings = Settings()
